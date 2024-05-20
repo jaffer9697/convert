@@ -1,0 +1,48 @@
+step1 or requirements.txt
+
+Importing Libraries:
+pip install(
+pdf2image: This library is used to convert PDF pages to images.
+pytesseract: It provides an interface for working with Tesseract OCR engine.
+os: This module provides functions to interact with the operating system.
+shutil: It is used for file operations, such as copying and removing files.
+PILLOW: PIL (Python Imaging Library) provides capabilities for opening, manipulating, and saving many different image file formats.)
+
+step2.
+
+Setting Tesseract Path:
+https://github.com/UB-Mannheim/tesseract/wiki
+The path to the Tesseract executable is set using pytesseract.pytesseract.tesseract_cmd. This is necessary to tell pytesseract where the Tesseract OCR engine is installed on your system.
+
+step3 :
+Defining Paths and Directories:
+
+pdf_path: This variable stores the path to the PDF file that you want to extract text from.
+temp_image_folder: This is the directory where temporary images extracted from the PDF will be stored.
+
+step4:  
+
+Preprocessing Function:
+
+preprocess_image: This function preprocesses each image extracted from the PDF to improve OCR accuracy. It converts the image to grayscale, increases contrast, binarizes the image, and applies a slight blur to remove noise.
+
+step 5 :
+PDF to Image Conversion and OCR:
+
+The code inside the try block converts each page of the PDF to an image using convert_from_path function from pdf2image. Each image is preprocessed using the preprocess_image function.
+Then, Tesseract OCR is performed on each preprocessed image using pytesseract.image_to_string. The OCR is configured to recognize text in the Tamil language (lang='tam') with additional configurations specified in custom_config.
+The extracted text from each image is stored in the text_list.
+
+step 6 :
+Saving Extracted Text:
+
+The extracted text from all images is combined into a single string (full_text).
+The text is then saved to a text file named output_text_file.txt using the open function.
+
+step 7 :
+Cleaning Up:
+
+In the finally block, temporary image files and the temporary directory are removed using the remove_temp_files function.
+The remove_temp_files function iterates through all files in the temporary directory and removes them using os.remove. Then, it attempts to remove the temporary directory itself using shutil.rmtree.
+
+
