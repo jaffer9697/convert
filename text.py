@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd =  r"C:\Users\USER\Desktop\convert\Tessera
 
 
 # Path to the PDF file
-pdf_path = r'C:\Users\USER\syllabus.pdf'
+pdf_path = r'C:\Users\USER\Std12-Hist-TM.pdf'
 
 # Directory to save the temporary images
 temp_image_folder = 'temp_images'

@@ -4,5 +4,4 @@ image_path = r"C:\Users\USER\Desktop\convert\image\Capture.JPG" # insert your ow
 ocr = OCR()
 text_list = ocr.predict(image_path)
 print(text_list[0])
-
 ## OUTPUT : நெடுஞ்சாலைத்
