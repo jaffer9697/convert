@@ -9,8 +9,7 @@ pytesseract.pytesseract.tesseract_cmd =  r"C:\Users\USER\Desktop\convert\Tessera
 
 
 # Path to the PDF file
-pdf_path = r'C:\Users\USER\Std12-Hist-TM.pdf'
-
+pdf_path = r'C:\Users\USER\tamil.pdf'
 # Directory to save the temporary images
 temp_image_folder = 'temp_images'
 if not os.path.exists(temp_image_folder):
@@ -32,7 +31,7 @@ def preprocess_image(image):
 
 try:
     # Convert PDF to a list of PIL images at 300 DPI
-    images = convert_from_path(pdf_path, dpi=300, output_folder=temp_image_folder)
+    images = convert_from_path(pdf_path, dpi=400, output_folder=temp_image_folder)
 
     # OCR each image and store the result in a list
     text_list = []
